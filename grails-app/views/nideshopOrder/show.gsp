@@ -68,6 +68,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${nideshopOrderInstance?.parentId}">
+				<li class="fieldcontain">
+					<span id="parentId-label" class="property-label"><g:message code="nideshopOrder.parentId.label" default="Parent Id" /></span>
+					
+						<span class="property-value" aria-labelledby="parentId-label"><g:link controller="nideshopOrder" action="show" id="${nideshopOrderInstance?.parentId?.id}">${nideshopOrderInstance?.parentId?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${nideshopOrderInstance?.actualPrice}">
 				<li class="fieldcontain">
 					<span id="actualPrice-label" class="property-label"><g:message code="nideshopOrder.actualPrice.label" default="Actual Price" /></span>
@@ -199,15 +208,6 @@
 					<span id="orderStatus-label" class="property-label"><g:message code="nideshopOrder.orderStatus.label" default="Order Status" /></span>
 					
 						<span class="property-value" aria-labelledby="orderStatus-label"><g:fieldValue bean="${nideshopOrderInstance}" field="orderStatus"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${nideshopOrderInstance?.parentId}">
-				<li class="fieldcontain">
-					<span id="parentId-label" class="property-label"><g:message code="nideshopOrder.parentId.label" default="Parent Id" /></span>
-					
-						<span class="property-value" aria-labelledby="parentId-label"><g:link controller="nideshopOrder" action="show" id="${nideshopOrderInstance?.parentId?.id}">${nideshopOrderInstance?.parentId?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

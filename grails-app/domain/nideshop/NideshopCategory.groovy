@@ -24,6 +24,7 @@ class NideshopCategory {
 
 	static constraints = {
 		name maxSize: 90
+		parentId nullable:true,blank:true
 	}
 	public String toString() {
 		return name

@@ -34,7 +34,7 @@
 					
 						<g:sortableColumn property="callbackStatus" title="${message(code: 'nideshopOrder.callbackStatus.label', default: 'Callback Status')}" />
 					
-						<g:sortableColumn property="actualPrice" title="${message(code: 'nideshopOrder.actualPrice.label', default: 'Actual Price')}" />
+						<th><g:message code="nideshopOrder.parentId.label" default="Parent Id" /></th>
 					
 					</tr>
 				</thead>
@@ -52,7 +52,7 @@
 					
 						<td>${fieldValue(bean: nideshopOrderInstance, field: "callbackStatus")}</td>
 					
-						<td>${fieldValue(bean: nideshopOrderInstance, field: "actualPrice")}</td>
+						<td>${fieldValue(bean: nideshopOrderInstance, field: "parentId")}</td>
 					
 					</tr>
 				</g:each>

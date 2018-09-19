@@ -67,17 +67,20 @@ if (typeof jQuery !== 'undefined') {
 		function bindOpenPanel(domString,inputString){
 			var posObj=getElemPos($(domString)[0]);
 			var projectName=getProjectName();
-			var panelString="<div id='add_pic_pan_"+inputString+"' >";
+			var panelString="<div class='upload_panel' id='add_pic_pan_"+inputString+"' >";
 				panelString+="<div class='close_pic_panel' >X</div>";
 				panelString+="<div class='upload_frame' >";
-				panelString+="<iframe scrolling='no' width='500' height='400' src='/"+projectName+"/p/create' >";
+				panelString+="<iframe scrolling='no' width='500' height='250' src='/"+projectName+"/p/create' >";
 				panelString+="</div></div>";
 			var panel=$(panelString);
+			if($(".upload_panel").length>0){
+				$(".upload_panel").remove();
+			}
 			$("body").append(panel);
 			panel.css({
 				"position":"absolute",
 				"width":"500px",
-				"height":"420px",
+				"height":"270px",
 				"left":posObj.x+"px",
 				"top":(parseInt(posObj.y)-100)+"px",
 				"border":"1px solid #000"
@@ -97,7 +100,7 @@ if (typeof jQuery !== 'undefined') {
 			$("#add_pic_pan_"+inputString+" .upload_frame").css({
 				"position":"absolute",
 				"width":"500px",
-				"height":"400px",
+				"height":"250px",
 				"left":"0",
 				"top":"20px",
 				"overflow":"hidden"
@@ -138,11 +141,27 @@ if (typeof jQuery !== 'undefined') {
 			}
 			return projectName;
 		}
-		
+
 		$(document).ready(function(){
 			changeUrl2superAdmin();
 			showUploadPanel();
 		});
 		
 	})(jQuery);
+}
+
+/**
+ * after upload success process function
+ */
+function afterUploadSuccess(lastfileName){
+	var fileName="http://a.g4f.cn/i/"+lastfileName;
+	console.log(fileName);
+	//out of frame must use top.document
+	var obj=top.document.getElementsByClassName("upload_panel");
+	console.log(obj);
+	var inputname=$(obj).attr("id").substring(12);
+	console.log(inputname);
+	//out of frame must use top.document or exist dom
+	$(obj).parent("body").find("input[name='"+inputname+"']").val(fileName);
+	$(obj).remove();
 }

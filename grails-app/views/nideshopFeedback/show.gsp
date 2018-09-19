@@ -59,6 +59,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${nideshopFeedbackInstance?.parentId}">
+				<li class="fieldcontain">
+					<span id="parentId-label" class="property-label"><g:message code="nideshopFeedback.parentId.label" default="Parent Id" /></span>
+					
+						<span class="property-value" aria-labelledby="parentId-label"><g:link controller="nideshopFeedback" action="show" id="${nideshopFeedbackInstance?.parentId?.id}">${nideshopFeedbackInstance?.parentId?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${nideshopFeedbackInstance?.messageImg}">
 				<li class="fieldcontain">
 					<span id="messageImg-label" class="property-label"><g:message code="nideshopFeedback.messageImg.label" default="Message Img" /></span>
@@ -109,15 +118,6 @@
 					<span id="orderId-label" class="property-label"><g:message code="nideshopFeedback.orderId.label" default="Order Id" /></span>
 					
 						<span class="property-value" aria-labelledby="orderId-label"><g:fieldValue bean="${nideshopFeedbackInstance}" field="orderId"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${nideshopFeedbackInstance?.parentId}">
-				<li class="fieldcontain">
-					<span id="parentId-label" class="property-label"><g:message code="nideshopFeedback.parentId.label" default="Parent Id" /></span>
-					
-						<span class="property-value" aria-labelledby="parentId-label"><g:link controller="nideshopFeedback" action="show" id="${nideshopFeedbackInstance?.parentId?.id}">${nideshopFeedbackInstance?.parentId?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

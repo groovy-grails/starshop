@@ -8,7 +8,8 @@ import grails.transaction.Transactional
 class PController {
 	static allowedMethods = [index:"GET",create:"GET",save: "POST"]
     def index() {
-		def filename=params["filename"]
+		println request.getQueryString()
+		def filename=request.getQueryString()
 		println "filename="+filename
 		def path=request.getSession().getServletContext().getRealPath("/")
 		def filePath=path+"/uploads/"
@@ -41,6 +42,7 @@ class PController {
 		}
 	def save() { 
 		Image imageInstance=new Image()
+		def lastfileName=""
 		def errorflag=false
 		def errormsg="文件不是图片文件！"
 		CommonsMultipartFile downloadedfile = request.getFile('name');
@@ -51,8 +53,9 @@ class PController {
 			dir.mkdir()
 		}
 		Random rand = new Random()
-		def randStr=rand.nextInt(1000000)
-		def fileName=new Date().getTime()+"-"+randStr
+		def randStr=rand.nextInt(100000).toString()
+		long longValue=Long.parseLong(new Date().getTime()+randStr)
+		def fileName=Long.toString(longValue, 36)
 		def oFileName=downloadedfile.getOriginalFilename()
 		
 		if(oFileName.lastIndexOf(".")!=-1){
@@ -69,7 +72,7 @@ class PController {
 			redirect create
 		}else{
 		
-		def lastfileName=filePath+fileName+"."+imageInstance.ext
+		lastfileName=filePath+fileName+"."+imageInstance.ext
 		imageInstance.name=fileName+"."+imageInstance.ext
 		
 		def fos= new FileOutputStream(new File(lastfileName))
@@ -82,7 +85,12 @@ class PController {
 			}
 		}
 		}
-		
-		render("upload success!")
+		def rederStr="<html><head>"
+			rederStr+='<script src="/nideshop/assets/jquery/jquery-1.11.1.js?compile=false" type="text/javascript" ></script>'
+			rederStr+='<script src="/nideshop/assets/jquery.js?compile=false" type="text/javascript" ></script>'
+			rederStr+='<script src="/nideshop/assets/application.js?compile=false" type="text/javascript" ></script>'
+			rederStr+="<script>afterUploadSuccess('"+imageInstance.name+"');</script>"
+			rederStr+="</head></html>"
+		render(rederStr)
 	}
 }

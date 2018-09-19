@@ -94,8 +94,8 @@
 					<li class="controller"><a href="/nideshop/nideshopUser/index">NideshopUser.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopRegion/index">NideshopRegion.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopAddress/index">NideshopAddress.label</a></li>
-					<li class="controller"><a href="/nideshop/nideshopChannel/index">NideshopChannel.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopCategory/index">NideshopCategory.label</a></li>
+					<li class="controller"><a href="/nideshop/nideshopChannel/index">NideshopChannel.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopBrand/index">NideshopBrand.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopAttributeCategory/index">NideshopAttributeCategory.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopAttribute/index">NideshopAttribute.label</a></li>

@@ -29,15 +29,13 @@
 				<fieldset class="form">
 					<div class="fieldcontain ${hasErrors(bean: imageInstance, field: 'name', 'error')} required">
 						<label for="name">
-							<g:message code="image.name.label" default="Name" />
-							<span class="required-indicator">*</span>
+							<g:message code="selectFile.label" default="Select File" />
 						</label>
-						<input type=file name="name" size="25" />
-					
+						<input type=file name="name" size="20" />
 					</div>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+					<g:submitButton name="create" class="save" value="${message(code: 'default.button.upload.label', default: 'upload')}" />
 				</fieldset>
 			</g:form>
 		</div>

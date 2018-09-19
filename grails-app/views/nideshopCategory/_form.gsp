@@ -11,6 +11,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: nideshopCategoryInstance, field: 'parentId', 'error')} ">
+	<label for="parentId">
+		<g:message code="nideshopCategory.parentId.label" default="Parent Id" />
+		
+	</label>
+	<g:select id="parentId" name="parentId.id" from="${nideshop.NideshopCategory.list()}" optionKey="id" value="${nideshopCategoryInstance?.parentId?.id}" class="many-to-one" noSelection="['null': '']"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: nideshopCategoryInstance, field: 'bannerUrl', 'error')} required">
 	<label for="bannerUrl">
 		<g:message code="nideshopCategory.bannerUrl.label" default="Banner Url" />
@@ -80,15 +89,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="level" required="" value="${nideshopCategoryInstance?.level}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: nideshopCategoryInstance, field: 'parentId', 'error')} required">
-	<label for="parentId">
-		<g:message code="nideshopCategory.parentId.label" default="Parent Id" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="parentId" name="parentId.id" from="${nideshop.NideshopCategory.list()}" optionKey="id" required="" value="${nideshopCategoryInstance?.parentId?.id}" class="many-to-one"/>
 
 </div>
 

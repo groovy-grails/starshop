@@ -178,22 +178,22 @@ grails.plugin.springsecurity.interceptUrlMap = [
 	  '/nideshopAdPosition/**': ['ROLE_ADMIN'],
 	  '/nideshopAd/**': ['ROLE_ADMIN'],
 	  
-	  '/nideshopGoods/**': ['ROLE_USER'],
-	   '/nideshopGoodsAttribute/**': ['ROLE_USER'],
-	   '/nideshopGoodsGallery/**': ['ROLE_USER'],
-	   '/nideshopGoodsIssue/**': ['ROLE_USER'],
-	   '/nideshopGoodsSpecification/**': ['ROLE_USER'],
-	   '/nideshopRelatedGoods/**': ['ROLE_USER'],
-	   '/nideshopProduct/**': ['ROLE_USER'],
-	   '/nideshopOrder/**': ['ROLE_USER'],
-	   '/nideshopOrderExpress/**': ['ROLE_USER'],
-	   '/nideshopOrderGoods/**': ['ROLE_USER'],
-	   '/nideshopUserCoupon/**': ['ROLE_USER'],
-	   '/nideshopTopic/**': ['ROLE_USER'],
+	  '/nideshopGoods/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopGoodsAttribute/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopGoodsGallery/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopGoodsIssue/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopGoodsSpecification/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopRelatedGoods/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopProduct/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopOrder/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopOrderExpress/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopOrderGoods/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopUserCoupon/**': ['ROLE_USER','ROLE_ADMIN'],
+	   '/nideshopTopic/**': ['ROLE_USER','ROLE_ADMIN'],
 	   
-	   '/nideshopFeedback/**': ['ROLE_USER'],
-		'/nideshopComment/**': ['ROLE_USER'],
-		'/nideshopCommentPicture/**': ['ROLE_USER']
+	   '/nideshopFeedback/**': ['ROLE_USER','ROLE_ADMIN'],
+		'/nideshopComment/**': ['ROLE_USER','ROLE_ADMIN'],
+		'/nideshopCommentPicture/**': ['ROLE_USER','ROLE_ADMIN']
 	
 ]
 //sunjh add at 2018916 for shiro

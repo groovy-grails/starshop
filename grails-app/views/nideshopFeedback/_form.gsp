@@ -38,6 +38,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: nideshopFeedbackInstance, field: 'parentId', 'error')} ">
+	<label for="parentId">
+		<g:message code="nideshopFeedback.parentId.label" default="Parent Id" />
+		
+	</label>
+	<g:select id="parentId" name="parentId.id" from="${nideshop.NideshopFeedback.list()}" optionKey="id" value="${nideshopFeedbackInstance?.parentId?.id}" class="many-to-one" noSelection="['null': '']"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: nideshopFeedbackInstance, field: 'messageImg', 'error')} required">
 	<label for="messageImg">
 		<g:message code="nideshopFeedback.messageImg.label" default="Message Img" />
@@ -89,15 +98,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="orderId" type="number" value="${nideshopFeedbackInstance.orderId}" required=""/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: nideshopFeedbackInstance, field: 'parentId', 'error')} required">
-	<label for="parentId">
-		<g:message code="nideshopFeedback.parentId.label" default="Parent Id" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="parentId" name="parentId.id" from="${nideshop.NideshopFeedback.list()}" optionKey="id" required="" value="${nideshopFeedbackInstance?.parentId?.id}" class="many-to-one"/>
 
 </div>
 

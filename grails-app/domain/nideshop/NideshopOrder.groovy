@@ -45,6 +45,7 @@ class NideshopOrder {
 		mobile maxSize: 60
 		payName maxSize: 120
 		callbackStatus nullable: true, maxSize: 5
+		parentId nullable:true,blank:true
 	}
 	public String toString() {
 		return orderSn

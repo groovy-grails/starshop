@@ -26,6 +26,8 @@
 					
 						<g:sortableColumn property="name" title="${message(code: 'nideshopCategory.name.label', default: 'Name')}" />
 					
+						<th><g:message code="nideshopCategory.parentId.label" default="Parent Id" /></th>
+					
 						<g:sortableColumn property="bannerUrl" title="${message(code: 'nideshopCategory.bannerUrl.label', default: 'Banner Url')}" />
 					
 						<g:sortableColumn property="frontDesc" title="${message(code: 'nideshopCategory.frontDesc.label', default: 'Front Desc')}" />
@@ -33,8 +35,6 @@
 						<g:sortableColumn property="frontName" title="${message(code: 'nideshopCategory.frontName.label', default: 'Front Name')}" />
 					
 						<g:sortableColumn property="iconUrl" title="${message(code: 'nideshopCategory.iconUrl.label', default: 'Icon Url')}" />
-					
-						<g:sortableColumn property="imgUrl" title="${message(code: 'nideshopCategory.imgUrl.label', default: 'Img Url')}" />
 					
 					</tr>
 				</thead>
@@ -44,6 +44,8 @@
 					
 						<td><g:link action="show" id="${nideshopCategoryInstance.id}">${fieldValue(bean: nideshopCategoryInstance, field: "name")}</g:link></td>
 					
+						<td>${fieldValue(bean: nideshopCategoryInstance, field: "parentId")}</td>
+					
 						<td>${fieldValue(bean: nideshopCategoryInstance, field: "bannerUrl")}</td>
 					
 						<td>${fieldValue(bean: nideshopCategoryInstance, field: "frontDesc")}</td>
@@ -51,8 +53,6 @@
 						<td>${fieldValue(bean: nideshopCategoryInstance, field: "frontName")}</td>
 					
 						<td>${fieldValue(bean: nideshopCategoryInstance, field: "iconUrl")}</td>
-					
-						<td>${fieldValue(bean: nideshopCategoryInstance, field: "imgUrl")}</td>
 					
 					</tr>
 				</g:each>

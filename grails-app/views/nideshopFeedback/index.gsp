@@ -32,9 +32,9 @@
 					
 						<g:sortableColumn property="msgContent" title="${message(code: 'nideshopFeedback.msgContent.label', default: 'Msg Content')}" />
 					
-						<g:sortableColumn property="messageImg" title="${message(code: 'nideshopFeedback.messageImg.label', default: 'Message Img')}" />
+						<th><g:message code="nideshopFeedback.parentId.label" default="Parent Id" /></th>
 					
-						<g:sortableColumn property="msgArea" title="${message(code: 'nideshopFeedback.msgArea.label', default: 'Msg Area')}" />
+						<g:sortableColumn property="messageImg" title="${message(code: 'nideshopFeedback.messageImg.label', default: 'Message Img')}" />
 					
 					</tr>
 				</thead>
@@ -50,9 +50,9 @@
 					
 						<td>${fieldValue(bean: nideshopFeedbackInstance, field: "msgContent")}</td>
 					
-						<td>${fieldValue(bean: nideshopFeedbackInstance, field: "messageImg")}</td>
+						<td>${fieldValue(bean: nideshopFeedbackInstance, field: "parentId")}</td>
 					
-						<td>${fieldValue(bean: nideshopFeedbackInstance, field: "msgArea")}</td>
+						<td>${fieldValue(bean: nideshopFeedbackInstance, field: "messageImg")}</td>
 					
 					</tr>
 				</g:each>

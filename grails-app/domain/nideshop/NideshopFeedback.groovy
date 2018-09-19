@@ -27,6 +27,7 @@ class NideshopFeedback {
 		userEmail maxSize: 60
 		msgTitle maxSize: 200
 		msgContent maxSize: 8000
+		parentId nullable:true,blank:true
 	}
 	public String toString() {
 		return userName+":"+msgContent?msgContent.substring(0,10):""

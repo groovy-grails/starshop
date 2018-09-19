@@ -47,6 +47,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: nideshopOrderInstance, field: 'parentId', 'error')} ">
+	<label for="parentId">
+		<g:message code="nideshopOrder.parentId.label" default="Parent Id" />
+		
+	</label>
+	<g:select id="parentId" name="parentId.id" from="${nideshop.NideshopOrder.list()}" optionKey="id" value="${nideshopOrderInstance?.parentId?.id}" class="many-to-one" noSelection="['null': '']"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: nideshopOrderInstance, field: 'actualPrice', 'error')} required">
 	<label for="actualPrice">
 		<g:message code="nideshopOrder.actualPrice.label" default="Actual Price" />
@@ -179,15 +188,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="orderStatus" type="number" value="${nideshopOrderInstance.orderStatus}" required=""/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: nideshopOrderInstance, field: 'parentId', 'error')} required">
-	<label for="parentId">
-		<g:message code="nideshopOrder.parentId.label" default="Parent Id" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="parentId" name="parentId.id" from="${nideshop.NideshopOrder.list()}" optionKey="id" required="" value="${nideshopOrderInstance?.parentId?.id}" class="many-to-one"/>
 
 </div>
 
