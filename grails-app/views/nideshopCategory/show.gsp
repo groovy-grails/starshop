@@ -41,6 +41,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${nideshopCategoryInstance?.level}">
+				<li class="fieldcontain">
+					<span id="level-label" class="property-label"><g:message code="nideshopCategory.level.label" default="Level" /></span>
+					
+						<span class="property-value" aria-labelledby="level-label"><g:fieldValue bean="${nideshopCategoryInstance}" field="level"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${nideshopCategoryInstance?.bannerUrl}">
 				<li class="fieldcontain">
 					<span id="bannerUrl-label" class="property-label"><g:message code="nideshopCategory.bannerUrl.label" default="Banner Url" /></span>
@@ -100,15 +109,6 @@
 					<span id="keywords-label" class="property-label"><g:message code="nideshopCategory.keywords.label" default="Keywords" /></span>
 					
 						<span class="property-value" aria-labelledby="keywords-label"><g:fieldValue bean="${nideshopCategoryInstance}" field="keywords"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${nideshopCategoryInstance?.level}">
-				<li class="fieldcontain">
-					<span id="level-label" class="property-label"><g:message code="nideshopCategory.level.label" default="Level" /></span>
-					
-						<span class="property-value" aria-labelledby="level-label"><g:fieldValue bean="${nideshopCategoryInstance}" field="level"/></span>
 					
 				</li>
 				</g:if>

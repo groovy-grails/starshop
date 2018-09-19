@@ -165,3 +165,5 @@ function afterUploadSuccess(lastfileName){
 	$(obj).parent("body").find("input[name='"+inputname+"']").val(fileName);
 	$(obj).remove();
 }
+
+

@@ -9,12 +9,12 @@ class NideshopTopic {
 	String itemPicUrl
 	String subtitle
 	NideshopTopicCategory topicCategoryId
-	BigDecimal priceInfo
-	String readCount
+	BigDecimal priceInfo=0
+	String readCount=0
 	String scenePicUrl
-	Integer topicTemplateId
-	Integer topicTagId
-	Integer sortOrder
+	Integer topicTemplateId=0
+	Integer topicTagId=0
+	Integer sortOrder=100
 	Byte isShow=1
 
 	static mapping = {

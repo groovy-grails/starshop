@@ -5,8 +5,8 @@ class NideshopProduct {
 	NideshopGoods goodsId
 	String goodsSpecificationIds
 	String goodsSn
-	Integer goodsNumber
-	BigDecimal retailPrice
+	Integer goodsNumber=0
+	BigDecimal retailPrice=0
 
 	static mapping = {
 		version false

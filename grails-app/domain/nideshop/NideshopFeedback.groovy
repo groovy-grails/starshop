@@ -12,7 +12,7 @@ class NideshopFeedback {
 	String msgContent
 	Integer msgTime
 	String messageImg
-	Integer orderId
+	Integer orderId=0
 	Byte msgArea=0
 
 	static mapping = {

@@ -20,6 +20,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: nideshopCategoryInstance, field: 'level', 'error')} required">
+	<label for="level">
+		<g:message code="nideshopCategory.level.label" default="Level" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="level" from="${nideshopCategoryInstance.constraints.level.inList}" required="" value="${nideshopCategoryInstance?.level}" valueMessagePrefix="nideshopCategory.level"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: nideshopCategoryInstance, field: 'bannerUrl', 'error')} required">
 	<label for="bannerUrl">
 		<g:message code="nideshopCategory.bannerUrl.label" default="Banner Url" />
@@ -80,15 +89,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="keywords" required="" value="${nideshopCategoryInstance?.keywords}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: nideshopCategoryInstance, field: 'level', 'error')} required">
-	<label for="level">
-		<g:message code="nideshopCategory.level.label" default="Level" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="level" required="" value="${nideshopCategoryInstance?.level}"/>
 
 </div>
 

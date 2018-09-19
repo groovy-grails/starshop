@@ -1,6 +1,7 @@
 dataSource {
     pooled = true
     jmxExport = true
+	logSql = true
 	//dialect = org.hibernate.dialect.MySQL5InnoDBDialect
     driverClassName = "com.mysql.jdbc.Driver"
     username = "root"

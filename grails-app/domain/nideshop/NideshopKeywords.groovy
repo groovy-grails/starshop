@@ -7,9 +7,9 @@ class NideshopKeywords implements Serializable {
 	Byte isHot=0
 	Byte isDefault=0
 	Byte isShow=1
-	Integer sortOrder
+	Integer sortOrder=100
 	String schemeUrl
-	Integer type
+	Integer type=0
 
 
 	static mapping = {

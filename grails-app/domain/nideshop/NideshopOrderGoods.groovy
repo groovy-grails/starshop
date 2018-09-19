@@ -7,9 +7,9 @@ class NideshopOrderGoods {
 	String goodsName
 	String goodsSn
 	NideshopProduct productId
-	Short number
-	BigDecimal marketPrice
-	BigDecimal retailPrice
+	Short number=1
+	BigDecimal marketPrice=0
+	BigDecimal retailPrice=0
 	String goodsSpecifitionNameValue
 	Byte isReal=0
 	String goodsSpecifitionIds

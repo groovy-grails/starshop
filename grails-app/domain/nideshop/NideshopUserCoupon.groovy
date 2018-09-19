@@ -6,12 +6,13 @@ class NideshopUserCoupon {
 	String couponNumber
 	NideshopUser userId
 	Integer usedTime
-	Integer orderId
+	NideshopOrder orderId
 
 	static mapping = {
 		version false
 		userId column: 'user_id'
 		couponId column: 'coupon_id'
+		orderId column: 'coupon_id'
 	}
 
 	static constraints = {

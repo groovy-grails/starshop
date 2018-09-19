@@ -6,30 +6,30 @@ class NideshopGoods {
 	String goodsSn
 	String name
 	NideshopBrand brandId
-	Integer goodsNumber
+	Integer goodsNumber=0
 	String keywords
 	String goodsBrief
 	String goodsDesc
 	Byte isOnSale=1
 	Integer addTime
-	Short sortOrder
+	Short sortOrder=100
 	Byte isDelete=0
 	NideshopAttributeCategory attributeCategory
-	BigDecimal counterPrice
-	BigDecimal extraPrice
+	BigDecimal counterPrice=0
+	BigDecimal extraPrice=0
 	Byte isNew=0
 	String goodsUnit
 	String primaryPicUrl
 	String listPicUrl
-	BigDecimal retailPrice
+	BigDecimal retailPrice=0
 	Integer sellVolume
 	NideshopGoods primaryProductId
-	BigDecimal unitPrice
+	BigDecimal unitPrice=0
 	String promotionDesc
 	String promotionTag
-	BigDecimal appExclusivePrice
-	Byte isAppExclusive
-	Byte isLimited
+	BigDecimal appExclusivePrice=0
+	Byte isAppExclusive=0
+	Byte isLimited=0
 	Byte isHot=0
 
 	static mapping = {

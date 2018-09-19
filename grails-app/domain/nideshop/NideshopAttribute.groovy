@@ -4,7 +4,7 @@ class NideshopAttribute {
 
 	NideshopAttributeCategory attributeCategoryId
 	String name
-	Boolean inputType
+	Boolean inputType=1
 	String values
 	Byte sortOrder=0
 

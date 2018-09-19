@@ -4,7 +4,7 @@ class NideshopShipper {
 
 	String name
 	String code
-	Integer sortOrder
+	Integer sortOrder=10
 
 	static mapping = {
 		version false

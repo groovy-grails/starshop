@@ -15,21 +15,21 @@ class NideshopOrder {
 	String address
 	String mobile
 	String postscript
-	BigDecimal shippingFee
+	BigDecimal shippingFee=0
 	String payName
 	Byte payId=0
-	BigDecimal actualPrice
-	Integer integral
-	BigDecimal integralMoney
-	BigDecimal orderPrice
-	BigDecimal goodsPrice
+	BigDecimal actualPrice=0
+	Integer integral=0
+	BigDecimal integralMoney=0
+	BigDecimal orderPrice=0
+	BigDecimal goodsPrice=0
 	Integer addTime
 	Integer confirmTime
 	Integer payTime
-	Integer freightPrice
+	Integer freightPrice=0
 	NideshopCoupon couponId
 	NideshopOrder parentId
-	BigDecimal couponPrice
+	BigDecimal couponPrice=0
 	String callbackStatus
 
 	static mapping = {

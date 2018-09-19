@@ -9,7 +9,7 @@ class NideshopOrderExpress {
 	String logisticCode
 	String traces
 	Byte isFinish=0
-	Integer requestCount
+	Integer requestCount=0
 	Integer requestTime
 	Integer addTime
 	Integer updateTime

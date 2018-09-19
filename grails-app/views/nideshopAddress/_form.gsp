@@ -29,21 +29,32 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: nideshopAddressInstance, field: 'cityId', 'error')} required">
-	<label for="cityId">
-		<g:message code="nideshopAddress.cityId.label" default="City Id" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="cityId" name="cityId.id" from="${nideshop.NideshopRegion.list()}" optionKey="id" required="" value="${nideshopAddressInstance?.cityId?.id}" class="many-to-one"/>
 
-</div>
 
 <div class="fieldcontain ${hasErrors(bean: nideshopAddressInstance, field: 'countryId', 'error')} required">
 	<label for="countryId">
 		<g:message code="nideshopAddress.countryId.label" default="Country Id" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="countryId" name="countryId.id" from="${nideshop.NideshopRegion.list()}" optionKey="id" required="" value="${nideshopAddressInstance?.countryId?.id}" class="many-to-one"/>
+	<g:select id="countryId" name="countryId.id" from="${nideshop.NideshopRegion.findAllByType(0)}" optionKey="id" required="" value="${nideshopAddressInstance?.countryId?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: nideshopAddressInstance, field: 'provinceId', 'error')} required">
+	<label for="provinceId">
+		<g:message code="nideshopAddress.provinceId.label" default="Province Id" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="provinceId" name="provinceId.id" from="${nideshop.NideshopRegion.findAllByType(1)}" optionKey="id" required="" value="${nideshopAddressInstance?.provinceId?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: nideshopAddressInstance, field: 'cityId', 'error')} required">
+	<label for="cityId">
+		<g:message code="nideshopAddress.cityId.label" default="City Id" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="cityId" name="cityId.id" from="${nideshop.NideshopRegion.findAllByType(2)}" optionKey="id" required="" value="${nideshopAddressInstance?.cityId?.id}" class="many-to-one"/>
 
 </div>
 
@@ -52,7 +63,7 @@
 		<g:message code="nideshopAddress.districtId.label" default="District Id" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="districtId" name="districtId.id" from="${nideshop.NideshopRegion.list()}" optionKey="id" required="" value="${nideshopAddressInstance?.districtId?.id}" class="many-to-one"/>
+	<g:select id="districtId" name="districtId.id" from="${nideshop.NideshopRegion.findAllByType(3)}" optionKey="id" required="" value="${nideshopAddressInstance?.districtId?.id}" class="many-to-one"/>
 
 </div>
 
@@ -65,14 +76,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: nideshopAddressInstance, field: 'provinceId', 'error')} required">
-	<label for="provinceId">
-		<g:message code="nideshopAddress.provinceId.label" default="Province Id" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="provinceId" name="provinceId.id" from="${nideshop.NideshopRegion.list()}" optionKey="id" required="" value="${nideshopAddressInstance?.provinceId?.id}" class="many-to-one"/>
 
-</div>
 
 <div class="fieldcontain ${hasErrors(bean: nideshopAddressInstance, field: 'userId', 'error')} required">
 	<label for="userId">

@@ -8,7 +8,7 @@ class NideshopBrand {
 	String picUrl
 	Byte sortOrder=50
 	Boolean isShow
-	BigDecimal floorPrice
+	BigDecimal floorPrice=0
 	String appListPicUrl
 	Boolean isNew
 	String newPicUrl

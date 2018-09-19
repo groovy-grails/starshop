@@ -6,7 +6,7 @@ class NideshopComment {
 	NideshopGoods valueId
 	String content
 	Long addTime
-	Byte status
+	Byte status=0
 	NideshopUser userId
 	String newContent
 

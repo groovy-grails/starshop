@@ -14,7 +14,7 @@ class NideshopCategory {
 	String imgUrl
 	String wapBannerUrl
 	String level
-	Integer type
+	Integer type=0
 	String frontName
 
 	static mapping = {
@@ -25,6 +25,7 @@ class NideshopCategory {
 	static constraints = {
 		name maxSize: 90
 		parentId nullable:true,blank:true
+		level inList:["L1","L2"]
 	}
 	public String toString() {
 		return name

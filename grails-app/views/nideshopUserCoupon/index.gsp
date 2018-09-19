@@ -28,7 +28,7 @@
 					
 						<th><g:message code="nideshopUserCoupon.couponId.label" default="Coupon Id" /></th>
 					
-						<g:sortableColumn property="orderId" title="${message(code: 'nideshopUserCoupon.orderId.label', default: 'Order Id')}" />
+						<th><g:message code="nideshopUserCoupon.orderId.label" default="Order Id" /></th>
 					
 						<g:sortableColumn property="usedTime" title="${message(code: 'nideshopUserCoupon.usedTime.label', default: 'Used Time')}" />
 					

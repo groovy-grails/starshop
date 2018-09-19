@@ -5,7 +5,7 @@ class NideshopGoodsGallery {
 	NideshopGoods goodsId
 	String imgUrl
 	String imgDesc
-	Integer sortOrder
+	Integer sortOrder=5
 
 	static mapping = {
 		version false

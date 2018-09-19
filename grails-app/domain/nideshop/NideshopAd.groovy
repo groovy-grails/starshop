@@ -3,7 +3,7 @@ package nideshop
 class NideshopAd {
 
 	NideshopAdPosition adPositionId
-	Byte mediaType
+	Byte mediaType=0
 	String name
 	String link
 	String imageUrl
