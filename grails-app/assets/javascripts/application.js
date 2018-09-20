@@ -46,6 +46,18 @@ if (typeof jQuery !== 'undefined') {
 		}
 		/**
 		 * uploadpic panel function
+		 * create-nideshopCategory bannerUrl iconUrl imgUrl wapBannerUrl
+		 * create-nideshopBrand appListPicUrl listPicUrl newPicUrl picUrl
+		 * create-nideshopTopicCategory picUrl
+		 * create-nideshopAd imageUrl
+		 * create-nideshopAdmin avatar
+		 * create-nideshopGoods listPicUrl primaryPicUrl
+		 * create-nideshopGoodsSpecification picUrl
+		 * create-nideshopGoodsGallery imgUrl
+		 * create-nideshopOrderGoods listPicUrl
+		 * create-nideshopTopicCategory picUrl
+		 * create-nideshopTopic itemPicUrl avatar scenePicUrl
+		 * create-nideshopFeedback messageImg
 		 */
 		function showUploadPanel(){
 			addOneUploadButton("#create-nideshopBrand form input[name='appListPicUrl']","appListPicUrl");

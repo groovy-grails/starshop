@@ -117,7 +117,7 @@
 				<li class="fieldcontain">
 					<span id="orderId-label" class="property-label"><g:message code="nideshopFeedback.orderId.label" default="Order Id" /></span>
 					
-						<span class="property-value" aria-labelledby="orderId-label"><g:fieldValue bean="${nideshopFeedbackInstance}" field="orderId"/></span>
+						<span class="property-value" aria-labelledby="orderId-label"><g:link controller="nideshopOrder" action="show" id="${nideshopFeedbackInstance?.orderId?.id}">${nideshopFeedbackInstance?.orderId?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

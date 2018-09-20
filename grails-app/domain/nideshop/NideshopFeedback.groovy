@@ -12,7 +12,7 @@ class NideshopFeedback {
 	String msgContent
 	Integer msgTime
 	String messageImg
-	Integer orderId=0
+	NideshopOrder orderId
 	Byte msgArea=0
 
 	static mapping = {
@@ -20,6 +20,7 @@ class NideshopFeedback {
 		version false
 		parentId column: 'parent_id'
 		userId column: 'user_id'
+		orderId column: 'order_id'
 	}
 
 	static constraints = {
@@ -30,6 +31,6 @@ class NideshopFeedback {
 		parentId nullable:true,blank:true
 	}
 	public String toString() {
-		return userName+":"+msgContent?msgContent.substring(0,10):""
+		return userName+":"+msgTitle
 	}
 }

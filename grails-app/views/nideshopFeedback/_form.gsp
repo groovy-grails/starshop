@@ -97,7 +97,7 @@
 		<g:message code="nideshopFeedback.orderId.label" default="Order Id" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="orderId" type="number" value="${nideshopFeedbackInstance.orderId}" required=""/>
+	<g:select id="orderId" name="orderId.id" from="${nideshop.NideshopOrder.list()}" optionKey="id" required="" value="${nideshopFeedbackInstance?.orderId?.id}" class="many-to-one"/>
 
 </div>
 

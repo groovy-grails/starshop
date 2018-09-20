@@ -21,6 +21,6 @@ class NideshopComment {
 		newContent maxSize: 8000
 	}
 	public String toString() {
-		return userId+":"+content?content.substring(0,10):""
+		return userId+"-"+valueId+":"+(content==null?"":content.length<10?content:content.substring(0,10))
 	}
 }
