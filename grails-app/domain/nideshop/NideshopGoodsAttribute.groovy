@@ -14,6 +14,7 @@ class NideshopGoodsAttribute {
 
 	static constraints = {
 		value maxSize: 8000
+		attributeId nullable:true,blank:true
 	}
 	public String toString() {
 		return value

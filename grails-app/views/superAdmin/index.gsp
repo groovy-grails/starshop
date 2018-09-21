@@ -121,6 +121,8 @@
 					<li class="controller"><a href="/nideshop/sysUserSysRole/index">SysUserSysRole.label</a></li>
 					<li class="controller"><a href="/nideshop/permission/index">Permission.label</a></li>
 				</ul>
+				<h2><a href="/nideshop">管理员界面:</a></h2>
+				<h2><a href="/nideshop/logout">退出登录</a></h2>
 			</div>
 		</div>
 	</body>

@@ -18,6 +18,6 @@ class NideshopProduct {
 		goodsSn maxSize: 60
 	}
 	public String toString() {
-		return goodsId+"-"+goodsSn
+		return goodsId
 	}
 }

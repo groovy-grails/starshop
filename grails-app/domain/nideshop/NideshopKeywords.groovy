@@ -13,7 +13,6 @@ class NideshopKeywords implements Serializable {
 
 
 	static mapping = {
-		id composite: ["keyword", "id"]
 		version false
 	}
 

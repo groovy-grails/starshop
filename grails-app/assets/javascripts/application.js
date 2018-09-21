@@ -60,7 +60,20 @@ if (typeof jQuery !== 'undefined') {
 		 * create-nideshopFeedback messageImg
 		 */
 		function showUploadPanel(){
-			addOneUploadButton("#create-nideshopBrand form input[name='appListPicUrl']","appListPicUrl");
+			addOneUploadButton("#bannerUrl","bannerUrl");
+			addOneUploadButton("#iconUrl","iconUrl");
+			addOneUploadButton("#imgUrl","imgUrl");
+			addOneUploadButton("#imageUrl","imageUrl");
+			addOneUploadButton("#wapBannerUrl","wapBannerUrl");
+			addOneUploadButton("#appListPicUrl","appListPicUrl");
+			addOneUploadButton("#listPicUrl","listPicUrl");
+			addOneUploadButton("#newPicUrl","newPicUrl");
+			addOneUploadButton("#picUrl","picUrl");
+			addOneUploadButton("#avatar","avatar");
+			addOneUploadButton("#primaryPicUrl","primaryPicUrl");
+			addOneUploadButton("#itemPicUrl","itemPicUrl");
+			addOneUploadButton("#scenePicUrl","scenePicUrl");
+			addOneUploadButton("#messageImg","messageImg");
 		}
 		/**
 		 * add one upload button
@@ -78,11 +91,12 @@ if (typeof jQuery !== 'undefined') {
 		 */
 		function bindOpenPanel(domString,inputString){
 			var posObj=getElemPos($(domString)[0]);
+			console.log(posObj);
 			var projectName=getProjectName();
 			var panelString="<div class='upload_panel' id='add_pic_pan_"+inputString+"' >";
 				panelString+="<div class='close_pic_panel' >X</div>";
 				panelString+="<div class='upload_frame' >";
-				panelString+="<iframe scrolling='no' width='500' height='250' src='/"+projectName+"/p/create' >";
+				panelString+="<iframe scrolling='no' width='500' height='150' src='/"+projectName+"/p/create' ></iframe>";
 				panelString+="</div></div>";
 			var panel=$(panelString);
 			if($(".upload_panel").length>0){
@@ -92,9 +106,9 @@ if (typeof jQuery !== 'undefined') {
 			panel.css({
 				"position":"absolute",
 				"width":"500px",
-				"height":"270px",
+				"height":"170px",
 				"left":posObj.x+"px",
-				"top":(parseInt(posObj.y)-100)+"px",
+				"top":(parseInt(posObj.y)-50)+"px",
 				"border":"1px solid #000"
 			});
 			$("#add_pic_pan_"+inputString+" .close_pic_panel").css({
@@ -112,7 +126,7 @@ if (typeof jQuery !== 'undefined') {
 			$("#add_pic_pan_"+inputString+" .upload_frame").css({
 				"position":"absolute",
 				"width":"500px",
-				"height":"250px",
+				"height":"150px",
 				"left":"0",
 				"top":"20px",
 				"overflow":"hidden"
@@ -153,10 +167,132 @@ if (typeof jQuery !== 'undefined') {
 			}
 			return projectName;
 		}
-
+		/**
+		 * change datetime value to long
+		 * create-nideshopCoupon sendEndDate sendStartDate  useEndDate useStartDate
+		 * create-nideshopAdmin addTime lastLoginTime updateTime
+		 * create-nideshopUser birthday lastLoginTime registerTime
+		 * 
+		 */
+		function changeDate2long(){
+			changeDate2longOne("addTime");
+			changeDate2longOne("lastLoginTime");
+			changeDate2longOne("updateTime");
+			changeDate2longOne("birthday");
+			changeDate2longOne("registerTime");
+			
+			changeDate2longOne("sendEndDate");
+			changeDate2longOne("sendStartDate");
+			changeDate2longOne("useEndDate");
+			changeDate2longOne("useStartDate");
+			
+		}
+		/**
+		 * change one datetime value to long 
+		 */
+		function changeDate2longOne(inputName){
+			setHiddenAndAddPickerOne(inputName);
+			computeChangedValue(inputName);
+			$("#"+inputName+"_year , #"+inputName+"_month , #"+inputName+"_day").change(function(){
+				computeChangedValue(inputName);
+			});
+		}
+		/**
+		 * compute changed value
+		 */
+		function computeChangedValue(inputName){
+			console.log("date changed")
+			var year=parseInt($("#"+inputName+"_year").val());
+			var month=parseInt($("#"+inputName+"_month").val())-1;
+			var day=parseInt($("#"+inputName+"_day").val());
+			$("input[name='"+inputName+"']").val(parseInt(new Date(year,month,day)/1000));
+		}
+		/**
+		 * set input hidden and add date picker
+		 */
+		function setHiddenAndAddPickerOne(inputName){
+			if($("#"+inputName).length>0){
+				var pickerString="\n"+makePickerDay(inputName+"_day")+"\n"+makePickerMonth(inputName+"_month")+"\n"+makePickYear(inputName+"_year");
+				$("#"+inputName).hide().after(pickerString);
+			}
+		}
+		function makePickerDay(selectName){
+			var date=new Date();
+			var Year=date.getFullYear();
+			var Month=date.getMonth()+1;
+			var Day=date.getDate();
+			var isLeapYear=((Year % 4)==0) && ((Year % 100)!=0) || ((Year % 400)==0);
+			var optionString='\n<option value="" selected="selected">-Choose-</option>';
+			for(var i=1;i<=28;i++){
+				if(i!=Day){
+					optionString+='\n<option value="'+i+'">'+i+'</option>';
+				}else{
+					optionString+='\n<option value="'+i+'" selected="selected">'+i+'</option>';
+				}
+			}
+			if(Month==2){
+				if(isLeapYear){
+					if(Day!=29){
+						optionString+='\n<option value="29">29</option>';
+					}else{
+						optionString+='\n<option value="29" selected="selected">29</option>';
+					}
+				}
+			}else{
+				if(Day!=29){
+					optionString+='\n<option value="29">29</option>';
+				}else{
+					optionString+='\n<option value="29" selected="selected">29</option>';
+				}
+				if(Day!=30){
+					optionString+='\n<option value="30">30</option>';
+				}else{
+					optionString+='\n<option value="30" selected="selected">30</option>';
+				}
+				if(Month%2!=0){
+					if(Day!=31){
+						optionString+='\n<option value="31">31</option>';
+					}else{
+						optionString+='\n<option value="31" selected="selected">31</option>';
+					}
+				}
+			}
+			var selectString='<select name="'+selectName+'" id="'+selectName+'" >'+optionString+'</select>';
+			return selectString;
+		}
+		function makePickerMonth(selectName){
+			var date=new Date();
+			var Month=date.getMonth();
+			var monthArray=["January","Fabruary","March","April","May","June","July","August","September","October","November","December"];
+			var optionString='\n<option value="" selected="selected">-Choose-</option>';
+			for(var i=0;i<12;i++){
+				if(Month!=i){
+					optionString+='\n<option value="'+(i+1)+'">'+monthArray[i]+'</option>';
+				}else{
+					optionString+='\n<option value="'+(i+1)+'" selected="selected">'+monthArray[i]+'</option>';
+				}
+			}
+			var selectString='<select name="'+selectName+'" id="'+selectName+'" >'+optionString+'</select>';
+			return selectString;
+		}
+		function makePickYear(selectName){
+			var date=new Date();
+			var Year=date.getFullYear();
+			var optionString='\n<option value="" selected="selected">-Choose-</option>';
+			for(var i=1970;i<2030;i++){
+				if(Year!=i){
+					optionString+='\n<option value="'+i+'">'+i+'</option>';
+				}else{
+					optionString+='\n<option value="'+i+'" selected="selected">'+i+'</option>';
+				}
+			}
+			var selectString='<select name="'+selectName+'" id="'+selectName+'" >'+optionString+'</select>';
+			return selectString;
+		}
 		$(document).ready(function(){
 			changeUrl2superAdmin();
 			showUploadPanel();
+			changeDate2long();
 		});
 		
 	})(jQuery);
@@ -174,7 +310,7 @@ function afterUploadSuccess(lastfileName){
 	var inputname=$(obj).attr("id").substring(12);
 	console.log(inputname);
 	//out of frame must use top.document or exist dom
-	$(obj).parent("body").find("input[name='"+inputname+"']").val(fileName);
+	$(obj).parent("body").find("#"+inputname).val(fileName);
 	$(obj).remove();
 }
 

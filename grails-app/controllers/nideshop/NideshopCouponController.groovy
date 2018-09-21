@@ -4,6 +4,7 @@ package nideshop
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import java.util.Calendar
 
 @Transactional(readOnly = true)
 class NideshopCouponController {
@@ -34,9 +35,9 @@ class NideshopCouponController {
             respond nideshopCouponInstance.errors, view:'create'
             return
         }
-
-        nideshopCouponInstance.save flush:true
-
+		
+		nideshopCouponInstance.save flush:true
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'nideshopCoupon.label', default: 'NideshopCoupon'), nideshopCouponInstance.id])

@@ -134,9 +134,9 @@ grails.plugin.springsecurity.authority.className = 'nideshop.SysRole'
 //sunjh add at 20180916
 grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugin.springsecurity.interceptUrlMap = [
-	'/':                ['permitAll'],
-	'/index':           ['permitAll'],
-	'/index.gsp':       ['permitAll'],
+	'/':                ['ROLE_USER','ROLE_ADMIN'],
+	'/index':           ['ROLE_USER','ROLE_ADMIN'],
+	'/index.gsp':       ['ROLE_USER','ROLE_ADMIN'],
 	'/assets/**':       ['permitAll'],
 	'/**/js/**':        ['permitAll'],
 	'/**/css/**':       ['permitAll'],

@@ -28,6 +28,6 @@ class NideshopOrderGoods {
 		goodsSpecifitionNameValue maxSize: 8000
 	}
 	public String toString() {
-		return orderId+"-"+goodsName
+		return goodsName
 	}
 }

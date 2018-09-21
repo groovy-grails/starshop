@@ -81,6 +81,8 @@ grails.project.dependency.resolution = {
 		//sunjh add at 20180916
 		compile ':spring-security-core:2.0.0'
 		compile ':spring-security-shiro:1.0.0'
+		//sunjh add at 20180921
+		compile ":scaffolding:2.0.0"
 		
     }
 }

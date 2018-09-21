@@ -13,7 +13,7 @@ class NideshopSearchHistory {
 
 	static constraints = {
 		keyword maxSize: 50
-		from maxSize: 45
+		from  column : '`from`' ,maxSize: 45 
 		userId nullable: true, maxSize: 45
 	}
 	public String toString() {

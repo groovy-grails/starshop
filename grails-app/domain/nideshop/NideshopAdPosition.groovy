@@ -9,6 +9,7 @@ class NideshopAdPosition {
 
 	static mapping = {
 		version false
+		desc column:'`desc`'
 	}
 
 	static constraints = {

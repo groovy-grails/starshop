@@ -11,6 +11,7 @@ class NideshopAttribute {
 	static mapping = {
 		version false
 		attributeCategoryId column: 'attribute_category_id'
+		values column: '`values`'
 	}
 
 	static constraints = {

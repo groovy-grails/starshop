@@ -47,7 +47,7 @@ class PController {
 		def errormsg="文件不是图片文件！"
 		CommonsMultipartFile downloadedfile = request.getFile('name');
 		def path=request.getSession().getServletContext().getRealPath("/")
-		def filePath=path+"/uploads/"
+		def filePath=path+"/uploads/i/"
 		def dir=new File(filePath)
 		if(!dir.isDirectory()){
 			dir.mkdir()

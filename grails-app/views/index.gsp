@@ -97,17 +97,19 @@
 					<li class="controller"><a href="/nideshop/nideshopGoodsIssue/index">NideshopGoodsIssue.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopRelatedGoods/index">NideshopRelatedGoods.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopProduct/index">NideshopProduct.label</a></li>
-					<li class="controller"><a href="/nideshop/nideshopOrder/index">NideshopOrder.label</a></li>
-					<li class="controller"><a href="/nideshop/nideshopOrderExpress/index">NideshopOrderExpress.label</a></li>
-					<li class="controller"><a href="/nideshop/nideshopOrderGoods/index">NideshopOrderGoods.label</a></li>
-					<li class="controller"><a href="/nideshop/nideshopUserCoupon/index">NideshopUserCoupon.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopTopic/index">NideshopTopic.label</a></li>
 				</ul>
 				<h2>数据查看:</h2>
 				<ul>
+					<li class="controller"><a href="/nideshop/nideshopOrder/index">NideshopOrder.label</a></li>
+					<li class="controller"><a href="/nideshop/nideshopOrderExpress/index">NideshopOrderExpress.label</a></li>
+					<li class="controller"><a href="/nideshop/nideshopOrderGoods/index">NideshopOrderGoods.label</a></li>
+					<li class="controller"><a href="/nideshop/nideshopUserCoupon/index">NideshopUserCoupon.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopFeedback/index">NideshopFeedback.label</a></li>
 					<li class="controller"><a href="/nideshop/nideshopComment/index">NideshopComment.label</a></li>
 				</ul>
+				<h2><a href="/nideshop/superAdmin">超级管理员界面:</a></h2>
+				<h2><a href="/nideshop/logout">退出登录</a></h2>
 			</div>
 		</div>
 	</body>

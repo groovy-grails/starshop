@@ -33,7 +33,6 @@ class NideshopGoods {
 	Byte isHot=0
 
 	static mapping = {
-		id generator: "assigned"
 		version false
 		categoryId column: 'category_id'
 		brandId column: 'brand_id'
@@ -47,6 +46,7 @@ class NideshopGoods {
 		goodsDesc nullable: true, maxSize: 8000
 		goodsUnit maxSize: 45
 		promotionTag maxSize: 45
+		primaryProductId nullable:true,blank:true
 	}
 	public String toString() {
 		return name

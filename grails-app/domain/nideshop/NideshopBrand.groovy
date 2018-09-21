@@ -7,10 +7,10 @@ class NideshopBrand {
 	String simpleDesc
 	String picUrl
 	Byte sortOrder=50
-	Boolean isShow
+	Boolean isShow=1
 	BigDecimal floorPrice=0
 	String appListPicUrl
-	Boolean isNew
+	Boolean isNew=0
 	String newPicUrl
 	Byte newSortOrder=10
 
