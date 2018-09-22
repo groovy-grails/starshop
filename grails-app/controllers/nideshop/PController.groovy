@@ -93,4 +93,16 @@ class PController {
 			rederStr+="</head></html>"
 		render(rederStr)
 	}
+	def i18n(){
+		def domainListStr=""
+		def domainList=grailsApplication.getArtefacts("Domain")
+		domainList.each{d->
+			domainListStr+= "#"+d.fullName +"<br>"
+			Class clazz = grailsApplication.getDomainClass(d.fullName).clazz
+			clazz.gormPersistentEntity.persistentPropertyNames.each{f->
+			domainListStr+= d.name+"."+ f+".label=" +"<br>"
+			}
+		}
+		render domainListStr
+	}
 }
