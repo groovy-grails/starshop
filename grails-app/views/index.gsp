@@ -90,26 +90,26 @@
 			<div id="controller-list" role="navigation">
 				<h2>功能设置:</h2>
 				<ul>
-					<li class="controller"><a href="/nideshop/nideshopGoods/index"><g:message code="NideshopGoods.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopGoodsSpecification/index"><g:message code="NideshopGoodsSpecification.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopGoodsAttribute/index"><g:message code="NideshopGoodsAttribute.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopGoodsGallery/index"><g:message code="NideshopGoodsGallery.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopGoodsIssue/index"><g:message code="NideshopGoodsIssue.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopRelatedGoods/index"><g:message code="NideshopRelatedGoods.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopProduct/index"><g:message code="NideshopProduct.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopTopic/index"><g:message code="NideshopTopic.label" /></a></li>
+					<li class="controller"><a href="nideshopGoods/index"><g:message code="NideshopGoods.label" /></a></li>
+					<li class="controller"><a href="nideshopGoodsSpecification/index"><g:message code="NideshopGoodsSpecification.label" /></a></li>
+					<li class="controller"><a href="nideshopGoodsAttribute/index"><g:message code="NideshopGoodsAttribute.label" /></a></li>
+					<li class="controller"><a href="nideshopGoodsGallery/index"><g:message code="NideshopGoodsGallery.label" /></a></li>
+					<li class="controller"><a href="nideshopGoodsIssue/index"><g:message code="NideshopGoodsIssue.label" /></a></li>
+					<li class="controller"><a href="nideshopRelatedGoods/index"><g:message code="NideshopRelatedGoods.label" /></a></li>
+					<li class="controller"><a href="nideshopProduct/index"><g:message code="NideshopProduct.label" /></a></li>
+					<li class="controller"><a href="nideshopTopic/index"><g:message code="NideshopTopic.label" /></a></li>
 				</ul>
 				<h2>数据查看:</h2>
 				<ul>
-					<li class="controller"><a href="/nideshop/nideshopOrder/index"><g:message code="NideshopOrder.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopOrderExpress/index"><g:message code="NideshopOrderExpress.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopOrderGoods/index"><g:message code="NideshopOrderGoods.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopUserCoupon/index"><g:message code="NideshopUserCoupon.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopFeedback/index"><g:message code="NideshopFeedback.label" /></a></li>
-					<li class="controller"><a href="/nideshop/nideshopComment/index"><g:message code="NideshopComment.label" /></a></li>
+					<li class="controller"><a href="nideshopOrder/index"><g:message code="NideshopOrder.label" /></a></li>
+					<li class="controller"><a href="nideshopOrderExpress/index"><g:message code="NideshopOrderExpress.label" /></a></li>
+					<li class="controller"><a href="nideshopOrderGoods/index"><g:message code="NideshopOrderGoods.label" /></a></li>
+					<li class="controller"><a href="nideshopUserCoupon/index"><g:message code="NideshopUserCoupon.label" /></a></li>
+					<li class="controller"><a href="nideshopFeedback/index"><g:message code="NideshopFeedback.label" /></a></li>
+					<li class="controller"><a href="nideshopComment/index"><g:message code="NideshopComment.label" /></a></li>
 				</ul>
-				<h2><a href="/nideshop/superAdmin">超级管理员界面:</a></h2>
-				<h2><a href="/nideshop/logout">退出登录</a></h2>
+				<h2><a href="superAdmin">超级管理员界面:</a></h2>
+				<h2><a href="/logout">退出登录</a></h2>
 			</div>
 		</div>
 	</body>

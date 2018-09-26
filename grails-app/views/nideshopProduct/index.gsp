@@ -24,13 +24,13 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="goodsSpecificationIds" title="${message(code: 'nideshopProduct.goodsSpecificationIds.label', default: 'Goods Specification Ids')}" />
-					
 						<g:sortableColumn property="goodsSn" title="${message(code: 'nideshopProduct.goodsSn.label', default: 'Goods Sn')}" />
 					
 						<th><g:message code="nideshopProduct.goodsId.label" default="Goods Id" /></th>
 					
 						<g:sortableColumn property="goodsNumber" title="${message(code: 'nideshopProduct.goodsNumber.label', default: 'Goods Number')}" />
+					
+						<th><g:message code="nideshopProduct.goodsSpecificationIds.label" default="Goods Specification Ids" /></th>
 					
 						<g:sortableColumn property="retailPrice" title="${message(code: 'nideshopProduct.retailPrice.label', default: 'Retail Price')}" />
 					
@@ -40,13 +40,13 @@
 				<g:each in="${nideshopProductInstanceList}" status="i" var="nideshopProductInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${nideshopProductInstance.id}">${fieldValue(bean: nideshopProductInstance, field: "goodsSpecificationIds")}</g:link></td>
-					
-						<td>${fieldValue(bean: nideshopProductInstance, field: "goodsSn")}</td>
+						<td><g:link action="show" id="${nideshopProductInstance.id}">${fieldValue(bean: nideshopProductInstance, field: "goodsSn")}</g:link></td>
 					
 						<td>${fieldValue(bean: nideshopProductInstance, field: "goodsId")}</td>
 					
 						<td>${fieldValue(bean: nideshopProductInstance, field: "goodsNumber")}</td>
+					
+						<td>${fieldValue(bean: nideshopProductInstance, field: "goodsSpecificationIds")}</td>
 					
 						<td>${fieldValue(bean: nideshopProductInstance, field: "retailPrice")}</td>
 					

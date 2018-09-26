@@ -3,7 +3,7 @@ package nideshop
 class NideshopProduct {
 
 	NideshopGoods goodsId
-	String goodsSpecificationIds
+	NideshopGoodsSpecification goodsSpecificationIds
 	String goodsSn
 	Integer goodsNumber=0
 	BigDecimal retailPrice=0
@@ -11,10 +11,10 @@ class NideshopProduct {
 	static mapping = {
 		version false
 		goodsId column: 'goods_id'
+		goodsSpecificationIds column: 'goods_specification_ids'
 	}
 
 	static constraints = {
-		goodsSpecificationIds maxSize: 50
 		goodsSn maxSize: 60
 	}
 	public String toString() {

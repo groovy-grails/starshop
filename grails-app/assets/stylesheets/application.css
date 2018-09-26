@@ -11,3 +11,10 @@
 *= require mobile
 *= require_self
 */
+
+.select_file_label{
+	width:80px;
+}
+.select_file_input{
+	width:250px;
+}

@@ -28,10 +28,10 @@
 			<g:form enctype='multipart/form-data'  url="save" >
 				<fieldset class="form">
 					<div class="fieldcontain ${hasErrors(bean: imageInstance, field: 'name', 'error')} required">
-						<label for="name">
+						<label for="name" class="select_file_label">
 							<g:message code="selectFile.label" default="Select File" />
 						</label>
-						<input type=file name="name" size="20" />
+						<input type="file" name="name" size="20" class="select_file_input" />
 					</div>
 				</fieldset>
 				<fieldset class="buttons">

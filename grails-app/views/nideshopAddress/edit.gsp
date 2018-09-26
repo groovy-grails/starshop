@@ -5,6 +5,7 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'nideshopAddress.label', default: 'NideshopAddress')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+		<script src="/p/address" type="text/javascript" ></script>
 	</head>
 	<body>
 		<a href="#edit-nideshopAddress" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

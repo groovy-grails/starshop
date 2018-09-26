@@ -24,7 +24,7 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="content" title="${message(code: 'nideshopTopic.content.label', default: 'Content')}" />
+						<g:sortableColumn property="title" title="${message(code: 'nideshopTopic.title.label', default: 'Title')}" />
 					
 						<g:sortableColumn property="avatar" title="${message(code: 'nideshopTopic.avatar.label', default: 'Avatar')}" />
 					
@@ -42,7 +42,7 @@
 				<g:each in="${nideshopTopicInstanceList}" status="i" var="nideshopTopicInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${nideshopTopicInstance.id}">${fieldValue(bean: nideshopTopicInstance, field: "content")}</g:link></td>
+						<td><g:link action="show" id="${nideshopTopicInstance.id}">${fieldValue(bean: nideshopTopicInstance, field: "title")}</g:link></td>
 					
 						<td>${fieldValue(bean: nideshopTopicInstance, field: "avatar")}</td>
 					

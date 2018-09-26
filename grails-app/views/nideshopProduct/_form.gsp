@@ -2,15 +2,6 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: nideshopProductInstance, field: 'goodsSpecificationIds', 'error')} required">
-	<label for="goodsSpecificationIds">
-		<g:message code="nideshopProduct.goodsSpecificationIds.label" default="Goods Specification Ids" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="goodsSpecificationIds" maxlength="50" required="" value="${nideshopProductInstance?.goodsSpecificationIds}"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: nideshopProductInstance, field: 'goodsSn', 'error')} required">
 	<label for="goodsSn">
 		<g:message code="nideshopProduct.goodsSn.label" default="Goods Sn" />
@@ -35,6 +26,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="goodsNumber" type="number" value="${nideshopProductInstance.goodsNumber}" required=""/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: nideshopProductInstance, field: 'goodsSpecificationIds', 'error')} required">
+	<label for="goodsSpecificationIds">
+		<g:message code="nideshopProduct.goodsSpecificationIds.label" default="Goods Specification Ids" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="goodsSpecificationIds" name="goodsSpecificationIds.id" from="${nideshop.NideshopGoodsSpecification.list()}" optionKey="id" required="" value="${nideshopProductInstance?.goodsSpecificationIds?.id}" class="many-to-one"/>
 
 </div>
 

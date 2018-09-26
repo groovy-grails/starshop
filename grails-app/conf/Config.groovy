@@ -177,6 +177,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
 	  '/nideshopTopicCategory/**': ['ROLE_ADMIN'],
 	  '/nideshopAdPosition/**': ['ROLE_ADMIN'],
 	  '/nideshopAd/**': ['ROLE_ADMIN'],
+	  '/image/**': ['ROLE_ADMIN'],
 	  
 	  '/nideshopGoods/**': ['ROLE_USER','ROLE_ADMIN'],
 	   '/nideshopGoodsAttribute/**': ['ROLE_USER','ROLE_ADMIN'],

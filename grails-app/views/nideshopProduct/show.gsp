@@ -23,15 +23,6 @@
 			</g:if>
 			<ol class="property-list nideshopProduct">
 			
-				<g:if test="${nideshopProductInstance?.goodsSpecificationIds}">
-				<li class="fieldcontain">
-					<span id="goodsSpecificationIds-label" class="property-label"><g:message code="nideshopProduct.goodsSpecificationIds.label" default="Goods Specification Ids" /></span>
-					
-						<span class="property-value" aria-labelledby="goodsSpecificationIds-label"><g:fieldValue bean="${nideshopProductInstance}" field="goodsSpecificationIds"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${nideshopProductInstance?.goodsSn}">
 				<li class="fieldcontain">
 					<span id="goodsSn-label" class="property-label"><g:message code="nideshopProduct.goodsSn.label" default="Goods Sn" /></span>
@@ -55,6 +46,15 @@
 					<span id="goodsNumber-label" class="property-label"><g:message code="nideshopProduct.goodsNumber.label" default="Goods Number" /></span>
 					
 						<span class="property-value" aria-labelledby="goodsNumber-label"><g:fieldValue bean="${nideshopProductInstance}" field="goodsNumber"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${nideshopProductInstance?.goodsSpecificationIds}">
+				<li class="fieldcontain">
+					<span id="goodsSpecificationIds-label" class="property-label"><g:message code="nideshopProduct.goodsSpecificationIds.label" default="Goods Specification Ids" /></span>
+					
+						<span class="property-value" aria-labelledby="goodsSpecificationIds-label"><g:link controller="nideshopGoodsSpecification" action="show" id="${nideshopProductInstance?.goodsSpecificationIds?.id}">${nideshopProductInstance?.goodsSpecificationIds?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

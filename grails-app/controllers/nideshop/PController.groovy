@@ -85,10 +85,12 @@ class PController {
 			}
 		}
 		}
+		def projectName=""
+		//projectName="/nideshop"
 		def rederStr="<html><head>"
-			rederStr+='<script src="/nideshop/assets/jquery/jquery-1.11.1.js?compile=false" type="text/javascript" ></script>'
-			rederStr+='<script src="/nideshop/assets/jquery.js?compile=false" type="text/javascript" ></script>'
-			rederStr+='<script src="/nideshop/assets/application.js?compile=false" type="text/javascript" ></script>'
+			rederStr+='<script src="'+projectName+'/assets/jquery/jquery-1.11.1.js?compile=false" type="text/javascript" ></script>'
+			rederStr+='<script src="'+projectName+'/assets/jquery.js?compile=false" type="text/javascript" ></script>'
+			rederStr+='<script src="'+projectName+'/assets/application.js?compile=false" type="text/javascript" ></script>'
 			rederStr+="<script>afterUploadSuccess('"+imageInstance.name+"');</script>"
 			rederStr+="</head></html>"
 		render(rederStr)
@@ -104,5 +106,8 @@ class PController {
 			}
 		}
 		render domainListStr
+	}
+	def address(){
+		respond NideshopRegion.list()
 	}
 }

@@ -23,24 +23,33 @@ if (typeof jQuery !== 'undefined') {
 			var url=location.pathname;
 			var filter="superAdmin,nideshopAdmin,nideshopSearchHistory,nideshopCart,nideshopCollect,nideshopFootprint,nideshopCommentPicture,nideshopUserLevel,nideshopUser,nideshopRegion,nideshopAddress,nideshopChannel,nideshopCategory,nideshopBrand,nideshopAttributeCategory,nideshopAttribute,nideshopKeywords,nideshopSpecification,nideshopShipper,nideshopCoupon,nideshopTopicCategory,nideshopAdPosition,nideshopAd,permission,sysRole,sysUser,sysUserSysRole";
 			var pathArray=filter.split(",");
-			if(url.indexOf("/")!=-1){
-				var temp=url.substring(url.indexOf("/")+1);
-				if(temp&&temp.indexOf("/")!=-1){
-					var home_link=temp.substring(0,temp.indexOf("/"));
-					console.log(home_link);
-					var flag=false;
-					for(i=0;i<pathArray.length;i++){
-						if(url.indexOf("/"+home_link+"/"+pathArray[i])==0){
-							flag=true;
-						}
+			var home_link=getProjectName();
+			console.log(home_link);
+			var flag=false;
+			for(i=0;i<pathArray.length;i++){
+				if(home_link){
+					if(url.indexOf("/"+home_link+"/"+pathArray[i])==0){
+						flag=true;
 					}
-					if(flag){
-						$("#home_link").attr("href","/"+home_link+"/superAdmin");
-						$(".nav .home").attr("href","/"+home_link+"/superAdmin");
-					}else{
-						$("#home_link").attr("href","/"+home_link);
+				}else{
+					if(url.indexOf("/"+pathArray[i])==0){
+						flag=true;
 					}
-					
+				}
+			}
+			if(flag){
+				if(home_link){
+					$("#home_link").attr("href","/"+home_link+"/superAdmin");
+					$(".nav .home").attr("href","/"+home_link+"/superAdmin");
+				}else{
+					$("#home_link").attr("href","/superAdmin");
+					$(".nav .home").attr("href","/superAdmin");
+				}
+			}else{
+				if(home_link){
+					$("#home_link").attr("href","/"+home_link);
+				}else{
+					$("#home_link").attr("href","/");
 				}
 			}
 		}
@@ -58,6 +67,8 @@ if (typeof jQuery !== 'undefined') {
 		 * create-nideshopTopicCategory picUrl
 		 * create-nideshopTopic itemPicUrl avatar scenePicUrl
 		 * create-nideshopFeedback messageImg
+		 * #create-nideshopGoods #goodsDesc , #create-nideshopTopic #content
+		 * #edit-nideshopGoods #goodsDesc , #edit-nideshopTopic #content
 		 */
 		function showUploadPanel(){
 			addOneUploadButton("#bannerUrl","bannerUrl");
@@ -74,13 +85,17 @@ if (typeof jQuery !== 'undefined') {
 			addOneUploadButton("#itemPicUrl","itemPicUrl");
 			addOneUploadButton("#scenePicUrl","scenePicUrl");
 			addOneUploadButton("#messageImg","messageImg");
+			addOneUploadButton("#create-nideshopGoods #goodsDesc","goodsDesc");
+			addOneUploadButton("#create-nideshopTopic #content","content");
+			addOneUploadButton("#edit-nideshopGoods #goodsDesc","goodsDesc");
+			addOneUploadButton("#edit-nideshopTopic #content","content");
 		}
 		/**
 		 * add one upload button
 		 */
 		function addOneUploadButton(domString,inputString){
 			if($(domString).length>0){
-				$(domString).after("&nbsp;&nbsp;<input type='button' id='add_pic_btn_"+inputString+"' name='add_btn' value='addPicture.label' >");
+				$(domString).after("&nbsp;&nbsp;<input type='button' id='add_pic_btn_"+inputString+"' name='add_btn' value='添加图片' >");
 				$("#add_pic_btn_"+inputString).bind("click",function(){
 					bindOpenPanel(domString,inputString);
 				});
@@ -96,7 +111,11 @@ if (typeof jQuery !== 'undefined') {
 			var panelString="<div class='upload_panel' id='add_pic_pan_"+inputString+"' >";
 				panelString+="<div class='close_pic_panel' >X</div>";
 				panelString+="<div class='upload_frame' >";
-				panelString+="<iframe scrolling='no' width='500' height='150' src='/"+projectName+"/p/create' ></iframe>";
+				if(projectName){
+					panelString+="<iframe scrolling='no' width='500' height='150' src='/"+projectName+"/p/create' ></iframe>";
+				}else{
+					panelString+="<iframe scrolling='no' width='500' height='150' src='/p/create' ></iframe>";
+				}
 				panelString+="</div></div>";
 			var panel=$(panelString);
 			if($(".upload_panel").length>0){
@@ -104,6 +123,7 @@ if (typeof jQuery !== 'undefined') {
 			}
 			$("body").append(panel);
 			panel.css({
+				"background-color":"#aaa",
 				"position":"absolute",
 				"width":"500px",
 				"height":"170px",
@@ -157,13 +177,10 @@ if (typeof jQuery !== 'undefined') {
 		 * get project name
 		 */
 		function getProjectName(){
-			var url=location.pathname;
-			var projectName="/";
-			if(url.indexOf("/")!=-1){
-				var temp=url.substring(url.indexOf("/")+1);
-				if(temp&&temp.indexOf("/")!=-1){
-					projectName=temp.substring(0,temp.indexOf("/"));
-				}
+			var hostName=location.hostname
+			var projectName=null;
+			if(hostName=="localhost"){
+				projectName="nideshop"
 			}
 			return projectName;
 		}
@@ -293,6 +310,7 @@ if (typeof jQuery !== 'undefined') {
 			changeUrl2superAdmin();
 			showUploadPanel();
 			changeDate2long();
+			parentChange();
 		});
 		
 	})(jQuery);
@@ -302,16 +320,51 @@ if (typeof jQuery !== 'undefined') {
  * after upload success process function
  */
 function afterUploadSuccess(lastfileName){
-	var fileName="http://a.g4f.cn/i/"+lastfileName;
+	var fileName="http://b.g4f.cn/i/"+lastfileName;
 	console.log(fileName);
 	//out of frame must use top.document
 	var obj=top.document.getElementsByClassName("upload_panel");
 	console.log(obj);
 	var inputname=$(obj).attr("id").substring(12);
 	console.log(inputname);
+	//#create-nideshopGoods #goodsDesc , #create-nideshopTopic #content add more pictures
 	//out of frame must use top.document or exist dom
-	$(obj).parent("body").find("#"+inputname).val(fileName);
+	if(inputname=="goodsDesc"){
+		var content=$(obj).parent("body").find("#"+inputname).val();
+		var result=content+'<p><img src="'+fileName+'" _src="'+fileName+'" /></p>';
+		$(obj).parent("body").find("#"+inputname).val(result);
+	}else if(inputname=="content"){
+		var content=$(obj).parent("body").find("#"+inputname).val();
+		var result=content+'<img src="'+fileName+'" />\n';
+		$(obj).parent("body").find("#"+inputname).val(result);
+	}else{
+		$(obj).parent("body").find("#"+inputname).val(fileName);
+	}
 	$(obj).remove();
 }
 
-
+//var regionArray=[];//countryId provinceId cityId districtId , {id,parentId,name}
+function parentChange(){
+	$("#countryId").change(function(){
+		processChange("countryId","provinceId");
+	});
+	$("#provinceId").change(function(e){
+		processChange("provinceId","cityId");
+	});
+	$("#cityId").change(function(e){
+		processChange("cityId","districtId");
+	});
+}
+function processChange(parentId,childDomId){
+	console.log($("#"+parentId).val());
+	$("#"+childDomId).empty().append(getOptionString($("#"+parentId).val()));
+}
+function getOptionString(parentIdValue){
+	var optionString="";
+	for(var i=0;i<regionArray.length;i++){
+		if(parentIdValue==regionArray[i].parentId){
+			optionString+='\n<option value="'+regionArray[i].id+'" >'+regionArray[i].name+'</option>';
+		}
+	}
+	return optionString;
+}

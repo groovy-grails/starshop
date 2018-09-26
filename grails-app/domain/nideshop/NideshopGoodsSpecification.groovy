@@ -3,7 +3,7 @@ package nideshop
 class NideshopGoodsSpecification {
 
 	NideshopGoods goodsId
-	NideshopGoodsSpecification specificationId
+	NideshopSpecification specificationId
 	String value
 	String picUrl
 
@@ -15,7 +15,6 @@ class NideshopGoodsSpecification {
 
 	static constraints = {
 		value maxSize: 50
-		specificationId  nullable:true,blank:true
 	}
 	public String toString() {
 		return value
